@@ -8,11 +8,12 @@ class subinfo(info.infoclass):
 
     def setTargets(self):
         self.svnTargets['master'] = 'https://github.com/chirs241097/QMidiPlayer.git'
-        for ver in ["0.8.7-1"]:
+        for ver in ["0.8.7-2"]:
             self.targets[ver] = f"https://github.com/chirs241097/QMidiPlayer/archive/{ver}.tar.gz"
             self.archiveNames[ver] = f"qmidiplayer-{ver}.tar.gz"
             self.targetInstSrc[ver] = f"QMidiPlayer-{ver}"
-        self.defaultTarget = "0.8.7-1"
+        self.targetDigests['0.8.7-2'] = (['23b12652e52035b0b9e339e26562759f9aff8739ee35309d5fd9b8ee702dcf9d'], CraftHash.HashAlgorithm.SHA256)
+        self.defaultTarget = "0.8.7-2"
 
         self.description = "A free cross-platform midi file player based on libfluidsynth and Qt."
         self.displayName = "QMidiPlayer"
