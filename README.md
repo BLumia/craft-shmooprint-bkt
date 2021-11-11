@@ -18,6 +18,7 @@ Please note: blueprints included in this repository doesn't means the original a
 
 - [Pineapple Pictures](https://github.com/BLumia/pineapple-pictures)
 - [QMidiPlayer](https://github.com/chirs241097/QMidiPlayer/)
+- [THPlayer](https://bearkidsteam.github.io/thplayer/)
 
 ### Libraries
 
