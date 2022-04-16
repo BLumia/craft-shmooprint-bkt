@@ -5,7 +5,7 @@ A set of blueprints used by BearKidsTeam for the KDE Craft build system.
 ## Usage
 
 1. [Get your KDE Craft ready](https://community.kde.org/Craft#Setting_up_Craft)
-2. Add this blueprint repository: `craft --add-blueprint-repository https://github.com/BearKidsTeam/craft-blueprints-owncloud.git`
+2. Add this blueprint repository: `craft --add-blueprint-repository https://github.com/BearKidsTeam/craft-shmooprint-bkt.git`
 3. Done. You can now try something like: `craft pineapple-pictures`
 
 ## In this repository...
