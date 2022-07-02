@@ -12,7 +12,7 @@ class subinfo(info.infoclass):
             self.targets[ver] = f"https://github.com/BLumia/pineapple-pictures/archive/{ver}.tar.gz"
             self.archiveNames[ver] = f"pineapple-pictures-{ver}.tar.gz"
             self.targetInstSrc[ver] = f"Pineapple-Pictures-{ver}"
-        self.defaultTarget = "0.6.0"
+        self.defaultTarget = "0.6.2"
 
         self.description = "A homebrew image viewer."
         self.displayName = "Pineapple Pictures"
