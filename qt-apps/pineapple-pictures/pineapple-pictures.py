@@ -8,7 +8,7 @@ class subinfo(info.infoclass):
 
     def setTargets(self):
         self.svnTargets['master'] = 'https://github.com/BLumia/pineapple-pictures.git'
-        for ver in ["0.3.0", "0.3.4", "0.5.2", "0.6.0"]:
+        for ver in ["0.3.0", "0.3.4", "0.5.2", "0.6.0", "0.6.1", "0.6.2"]:
             self.targets[ver] = f"https://github.com/BLumia/pineapple-pictures/archive/{ver}.tar.gz"
             self.archiveNames[ver] = f"pineapple-pictures-{ver}.tar.gz"
             self.targetInstSrc[ver] = f"Pineapple-Pictures-{ver}"
