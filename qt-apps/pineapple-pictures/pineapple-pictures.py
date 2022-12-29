@@ -34,7 +34,7 @@ class Package(CMakePackageBase):
         self.defines["company"] = "Bear Kids Team"
         self.defines["executable"] = "bin\\ppic.exe"
         self.defines["license"] = os.path.join(self.sourceDir(), "LICENSE")
-        self.defines["icon"] = os.path.join(self.sourceDir(), "icons", "app-icon.ico")
+        self.defines["icon"] = os.path.join(self.sourceDir(), "assets", "icons", "app-icon.ico")
         self.ignoredPackages.append("binary/mysql")
         self.ignoredPackages.append("libs/dbus")
         return TypePackager.createPackage(self)
