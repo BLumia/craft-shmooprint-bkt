@@ -22,6 +22,7 @@ class subinfo(info.infoclass):
         self.runtimeDependencies["libs/qt5/qtbase"] = None
         self.runtimeDependencies["libs/qt5/qtsvg"] = None
         self.runtimeDependencies["libs/qt5/qttools"] = None
+        self.runtimeDependencies["libs/qt5/qtwinextras"] = None
         self.runtimeDependencies["libs/fluidsynth"] = None
         self.runtimeDependencies["libs/libsdl2"] = None
         self.runtimeDependencies["media-libs/rtmidi"] = None
