@@ -20,6 +20,7 @@ class subinfo(info.infoclass):
     def setDependencies(self):
         self.runtimeDependencies["libs/qt5/qtbase"] = None
         self.runtimeDependencies["libs/qt5/qtsvg"] = None
+        self.runtimeDependencies["libs/qt5/qttools"] = None
         self.runtimeDependencies["libs/exiv2"] = None
         self.runtimeDependencies["kde/frameworks/tier1/kimageformats"] = None
 
