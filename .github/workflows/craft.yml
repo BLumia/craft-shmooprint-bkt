@@ -1,0 +1,52 @@
+# Modified from https://github.com/quassel/quassel/blob/master/.github/workflows/main.yml
+name: Craft CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        required: true
+        type: string
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+
+# ---------------------------------------------------------------------------
+  build-windows:
+    name: Windows
+    runs-on: windows-latest
+    env:
+      WORKSPACE: ${{ github.workspace }}
+      CRAFT: /C/CraftMaster/windows-msvc2019_64-cl/craft/bin/craft.py
+
+    steps:
+    - name: Check out source code
+      uses: actions/checkout@v3
+
+    - name: Clone CraftMaster
+      run: git clone --depth=1 https://invent.kde.org/kde/craftmaster.git /C/CraftMaster/CraftMaster
+
+    - name: Configure CraftMaster
+      run: python /C/CraftMaster/CraftMaster/CraftMaster.py --config $WORKSPACE/.github/.craftsettings.ini --variables "WORKSPACE=$WORKSPACE"
+
+    - name: Add blueprints
+      run: |
+        python $CRAFT --add-blueprint-repository https://github.com/BearKidsTeam/craft-shmooprint-bkt.git
+
+    - name: Install NSIS
+      run: python $CRAFT dev-utils/nsis
+
+    - name: Build
+      run: python $CRAFT ${{ inputs.project }}
+
+    - name: Package
+      run: python $CRAFT --package ${{ inputs.project }}
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: Windows
+        path: ${{ github.workspace }}/packages/*
