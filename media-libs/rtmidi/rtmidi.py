@@ -3,15 +3,16 @@ import info
 
 class subinfo(info.infoclass):
     def setTargets(self):
-        for ver in ['4.0.0']:
+        for ver in ['4.0.0', '5.0.0']:
             self.targets[ver] = f"https://github.com/thestk/rtmidi/archive/{ver}.tar.gz"
             self.archiveNames[ver] = f"rtmidi-{ver}.tar.gz"
             self.targetInstSrc[ver] = f"rtmidi-{ver}"
 
         self.targetDigests['4.0.0'] = (['d32de9ceebf6d969537e9a9720925a1ac7f6a8bc4ac4ce7c58c01434f4e54f44'], CraftHash.HashAlgorithm.SHA256)
+        self.targetDigests['5.0.0'] = (['c7923e4eee82b06c007435892cb2c3212d9007fa482c6b718943bda71c02c5a7'], CraftHash.HashAlgorithm.SHA256)
         self.description = "A set of C++ classes that provide a common API for realtime MIDI input/output across Linux (ALSA & JACK), Macintosh OS X (CoreMIDI) and Windows (Multimedia)"
         self.webpage = "http://www.music.mcgill.ca/~gary/rtmidi/"
-        self.defaultTarget = '4.0.0'
+        self.defaultTarget = '5.0.0'
 
     def setDependencies(self):
         self.runtimeDependencies["virtual/base"] = None
