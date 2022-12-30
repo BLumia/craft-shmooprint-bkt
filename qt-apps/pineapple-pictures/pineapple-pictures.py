@@ -35,6 +35,7 @@ class Package(CMakePackageBase):
         self.defines["executable"] = "bin\\ppic.exe"
         self.defines["license"] = os.path.join(self.sourceDir(), "LICENSE")
         self.defines["icon"] = os.path.join(self.sourceDir(), "assets", "icons", "app-icon.ico")
+        self.defines["file_types"] = [".jpg", ".jpeg", ".jfif", ".gif", ".png", ".webp", ".svg", ".tga", ".psd", ".xcf", ".kra"]
         self.ignoredPackages.append("binary/mysql")
         self.ignoredPackages.append("libs/dbus")
         return TypePackager.createPackage(self)

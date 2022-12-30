@@ -39,6 +39,7 @@ class Package(CMakePackageBase):
         self.defines["executable"] = "qmidiplayer.exe"
         self.defines["license"] = os.path.join(self.sourceDir(), "COPYING")
         self.defines["icon"] = os.path.join(self.sourceDir(), "img", "qmidiplayer.ico")
+        self.defines["file_types"] = [".mid"]
         self.ignoredPackages.append("binary/mysql")
         self.ignoredPackages.append("libs/dbus")
         return TypePackager.createPackage(self)
