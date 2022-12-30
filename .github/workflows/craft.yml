@@ -8,6 +8,9 @@ on:
       project:
         required: true
         type: string
+      build-appx:
+        description: Build (unsigned) appx package for Windows
+        type: boolean
 
 defaults:
   run:
@@ -44,7 +47,12 @@ jobs:
       run: python $CRAFT ${{ inputs.project }}
 
     - name: Package
+      if: ${{ !inputs.build-appx }}
       run: python $CRAFT --package ${{ inputs.project }}
+
+    - name: Package (Appx)
+      if: ${{ inputs.build-appx }}
+      run: python $CRAFT --package --options [Packager]PackageType=AppxPackager ${{ inputs.project }}
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v3

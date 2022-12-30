@@ -36,6 +36,9 @@ class Package(CMakePackageBase):
         self.defines["license"] = os.path.join(self.sourceDir(), "LICENSE")
         self.defines["icon"] = os.path.join(self.sourceDir(), "assets", "icons", "app-icon.ico")
         self.defines["file_types"] = [".jpg", ".jpeg", ".jfif", ".gif", ".png", ".webp", ".svg", ".tga", ".psd", ".xcf", ".kra"]
+        # Icon used by AppxPackager
+        self.defines["icon_png"] = os.path.join(self.packageDir(), "icons", "150-apps-pineapple-pictures.png")
+        self.defines["icon_png_44"] = os.path.join(self.packageDir(), "icons", "44-apps-pineapple-pictures.png")
         self.ignoredPackages.append("binary/mysql")
         self.ignoredPackages.append("libs/dbus")
         return TypePackager.createPackage(self)
