@@ -30,7 +30,7 @@ class Package(CMakePackageBase):
         CMakePackageBase.__init__(self)
 
     def createPackage(self):
-        # self.blacklist_file.append(os.path.join(self.packageDir(), 'blacklist.txt'))
+        self.blacklist_file.append(os.path.join(self.packageDir(), 'blacklist.txt'))
         self.defines["company"] = "Bear Kids Team"
         self.defines["executable"] = "bin\\ppic.exe"
         self.defines["license"] = os.path.join(self.sourceDir(), "LICENSE")
@@ -39,6 +39,7 @@ class Package(CMakePackageBase):
         # Icon used by AppxPackager
         self.defines["icon_png"] = os.path.join(self.packageDir(), "icons", "150-apps-pineapple-pictures.png")
         self.defines["icon_png_44"] = os.path.join(self.packageDir(), "icons", "44-apps-pineapple-pictures.png")
+        self.addExecutableFilter(r"(bin|libexec)/(?!(ppic|update-mime-database)).*")
         self.ignoredPackages.append("binary/mysql")
         self.ignoredPackages.append("libs/dbus")
         return TypePackager.createPackage(self)

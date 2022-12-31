@@ -1,0 +1,21 @@
+# blacklist
+
+# unused data
+bin/bearer/.*
+bin/designer/.*
+bin/scenegraph/.*
+bin/sqldrivers/.*
+bin/data/icu/.*
+bin/data/kservices5/.*
+share/locale/.*
+
+# not using QML
+.*\.qml
+.*\.qmltypes
+.*/qmldir
+bin/Qt/.*
+bin/QtQml/.*
+bin/QtQuick/.*
+bin/QtQuick.2/.*
+bin/QtTest/.*
+bin/qmltooling/.*
